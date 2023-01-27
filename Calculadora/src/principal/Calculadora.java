@@ -34,7 +34,7 @@ public class Calculadora{
                 System.out.println ("Operaci�n no v�lida");
             }
         }   while (menu.repetir());
-       }catch (arithmeticException e){
+       }catch ( ){
     	   System.out.println("error aritmetico "+e.getMessage());
     	   System.out.println("fin del programa");
     	   
