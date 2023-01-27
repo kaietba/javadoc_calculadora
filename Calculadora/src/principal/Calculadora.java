@@ -10,7 +10,7 @@ public class Calculadora{
         
         Menu menu = new Menu();
         Operaciones operaciones = new Operaciones();
-        
+       try { 
         do{
             operandos = menu.pedirNumeros();
             operacion = menu.menuOpciones();
@@ -23,7 +23,7 @@ public class Calculadora{
                 System.out.println ("Resultado: " + resultado);
             } else if (operacion.equalsIgnoreCase("*")){
                 resultado = operaciones.multiplicar(operandos[0], operandos[1]);
-                System.out.println ("Resultado: " + resultado);
+                System.out.println ("Resultado: " + resultado); 
             } else if (operacion.equalsIgnoreCase("/")){
                 resultado = operaciones.dividir(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
@@ -31,8 +31,13 @@ public class Calculadora{
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else {
-                System.out.println ("Operación no válida");
+                System.out.println ("Operaciï¿½n no vï¿½lida");
             }
         }   while (menu.repetir());
+       }catch (arithmeticException e){
+    	   System.out.println("error aritmetico "+e.getMessage());
+    	   System.out.println("fin del programa");
+    	   
+       }
     }
 }
